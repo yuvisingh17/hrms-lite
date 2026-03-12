@@ -47,7 +47,7 @@ export default function ApiStatusBanner() {
         <span>
           We're having trouble connecting to the server.
           Please check if the backend service is running on{" "}
-          <code>localhost:8000</code>.
+          <code>https://hrms-lite-q0ay.onrender.com</code>.
         </span>
       </div>
       <button className="api-banner-close" onClick={() => setDismissed(true)} aria-label="Dismiss">
