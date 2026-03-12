@@ -4,20 +4,53 @@ A production-quality, full-stack HRMS application built with FastAPI, React (Vit
 
 ---
 
+Live Demo
+
+# Frontend (Vercel)
+
+https://hrms-lite-git-main-yuvisingh17s-projects.vercel.app
+
+# Backend API (Render)
+
+https://hrms-lite-q0ay.onrender.com
+
+# API Documentation
+
+https://hrms-lite-q0ay.onrender.com/docs
+
+# Important Note
+
+The backend is deployed on Render's free tier, which automatically spins down inactive services.
+
+Because of this, the first request may take ~30–50 seconds while the server wakes up.
+The frontend includes loading indicators and graceful error handling to manage this delay smoothly.
+
+Subsequent requests will respond normally once the server is active.
+
 ## Overview
 
 HRMS Lite provides essential HR functionality: employee management and attendance tracking, with a clean dashboard summary. Designed for clarity, modularity, and reliability.
+
+Employee management
+
+Attendance tracking
+
+Dashboard analytics
+
+Clean and responsive UI
+
+The project follows a layered architecture separating routing, services, and database logic for maintainability and scalability.
 
 ---
 
 ## Tech Stack
 
-| Layer     | Technology                          |
-|-----------|-------------------------------------|
-| Frontend  | React 18, Vite, React Router, Axios |
-| Backend   | Python 3.11+, FastAPI, Pydantic v2  |
-| Database  | MongoDB Atlas (via Motor async driver) |
-| Deployment | Vercel (frontend), Render (backend) |
+| Layer      | Technology                             |
+| ---------- | -------------------------------------- |
+| Frontend   | React 18, Vite, React Router, Axios    |
+| Backend    | Python 3.11+, FastAPI, Pydantic v2     |
+| Database   | MongoDB Atlas (via Motor async driver) |
+| Deployment | Vercel (frontend), Render (backend)    |
 
 ---
 
@@ -66,21 +99,22 @@ hrms-lite/
 
 ## API Endpoints
 
-| Method | Endpoint                         | Description                     |
-|--------|----------------------------------|---------------------------------|
-| GET    | `/`                              | Health check                    |
-| GET    | `/dashboard`                     | Summary stats                   |
-| POST   | `/employees`                     | Create employee                 |
-| GET    | `/employees`                     | List all employees              |
-| DELETE | `/employees/{employee_id}`       | Delete employee                 |
-| POST   | `/attendance`                    | Mark attendance                 |
-| GET    | `/attendance/{employee_id}`      | Get attendance (with date filter) |
+| Method | Endpoint                    | Description                       |
+| ------ | --------------------------- | --------------------------------- |
+| GET    | `/`                         | Health check                      |
+| GET    | `/dashboard`                | Summary stats                     |
+| POST   | `/employees`                | Create employee                   |
+| GET    | `/employees`                | List all employees                |
+| DELETE | `/employees/{employee_id}`  | Delete employee                   |
+| POST   | `/attendance`               | Mark attendance                   |
+| GET    | `/attendance/{employee_id}` | Get attendance (with date filter) |
 
 ---
 
 ## Local Setup
 
 ### Prerequisites
+
 - Python 3.11+
 - Node.js 18+
 - MongoDB Atlas connection string
@@ -89,7 +123,7 @@ hrms-lite/
 
 ```bash
 cd backend
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
@@ -147,3 +181,15 @@ npm run dev
 - Deleting an employee also removes their attendance records (cascade)
 - Duplicate attendance (same employee + same date) is rejected
 - All dates use `YYYY-MM-DD` ISO format
+
+# Possible Future Improvements
+
+Authentication (JWT / OAuth)
+
+Role-based access control
+
+Employee leave management
+
+Export reports (CSV / PDF)
+
+WebSocket real-time updates
